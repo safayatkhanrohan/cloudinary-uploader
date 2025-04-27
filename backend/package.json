@@ -1,0 +1,22 @@
+{
+      "name": "backend",
+      "version": "1.0.0",
+      "main": "server.js",
+      "type": "module",
+      "scripts": {
+            "prod": "SET NODE_ENV=production&& nodemon -r dotenv/config --experimental-json-modules src/server.js",
+            "dev": "SET NODE_ENV=development&& nodemon -r dotenv/config --experimental-json-modules src/server.js",
+            "start": "node -r dotenv/config src/server.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "description": "",
+      "dependencies": {
+            "cloudinary": "^2.6.0",
+            "cors": "^2.8.5",
+            "dotenv": "^16.5.0",
+            "express": "^5.1.0",
+            "multer": "^1.4.5-lts.2"
+      }
+}
