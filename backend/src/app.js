@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 const app = express();
+import path from "path";
+const __dirname = path.resolve();
 
 import { upload } from "./middlewares/multer.middleware.js";
 import { uploadFile } from "./handlers/cloudinary.js";
@@ -15,6 +17,11 @@ app.use(
             credentials: true,
       })
 );
+
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.get(/(.*)/, (req, res) => {
+      res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+});
 
 app.post(
       "/upload",
