@@ -7,7 +7,11 @@ import { uploadFile } from "./handlers/cloudinary.js";
 
 app.use(
       cors({
-            origin: ["http://localhost:5173", "http://localhost:5174"],
+            origin: [
+                  "http://localhost:5173",
+                  "http://localhost:5174",
+                  "https://cloudinary-uploader-rdd1.onrender.com",
+            ],
             credentials: true,
       })
 );
